@@ -1,11 +1,12 @@
 #include "main.h"
 #include <stdio.h>
 /**
- *simple_print_buffer - prints buffer in hexa
- *@buffer: the address of memory to print
- *@size: the size of the memory to print
+ *_memset - fills memory with constant byte
+ *@s: pointer to the memory area
+ *@n: bytes of memory
+ *@b: constant byte
  *
- *Return: Nothing.
+ *Return: the memory area of s
  */
 char *_memset(char *s, char b, unsigned int n)
 {
