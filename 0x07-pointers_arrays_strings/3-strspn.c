@@ -1,34 +1,34 @@
 #include "main.h"
-#include <stdio.h>
+
 /**
- * _strspn - gets the length of a prefix substring
- * @s: pointer to a string
- * @accept: pointer to a string
- *
- * Return: the number of bytes
+ * *_strspn - gets the length of a prefix substring.
+ * @s: main string to be scanned
+ * @accept: string containing the list of characters to natch
+ * Return: the number of bytes in the initial segment
+ * of s which consist only of bytes from accept
  */
 unsigned int _strspn(char *s, char *accept)
 {
-int count = 0;
-int i = 0;
-int j = 0;
+	int i, j, f, flag;
 
-while (s[i] != '\0')
-{
-while (accept[j] != '\0')
-{
-if (accept[j] == s[i])
-{
-count++;
+	f = 0;
+
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		flag = 0;
+		for (j = 0; accept[j] != '\0'; j++)
+		{
+			if (s[i] == accept[j])
+			{
+				f++;
+				flag = 1;
 			}
-j++;
+		}
+		if (flag == 0)
+		{
+			return (f);
+		}
+	}
+
+	return (0);
 }
-j = 0;
-i++;
-if (s[i] == ' ')
-{
-break;
-}
-}
-return (count);
-}	  
